@@ -1,0 +1,11 @@
+name:
+  ecshop
+server:
+  port: 9999
+spring:
+  datasource:
+    url:
+    driver-class-name: com.mysql.jdbc.Driver
+    username:
+    password:
+  jpa:

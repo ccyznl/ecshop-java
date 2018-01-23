@@ -1,0 +1,59 @@
+name:
+  ecshop
+server:
+  port: 8888
+spring:
+  # MySQL数据源
+  datasource:
+    # MySQL连接用户名
+    username: root
+    # MySQL连接密码
+    password: root
+    # MySQL连接地址
+    url: jdbc:mysql://localhost:3306/db_ecshop?useSSL=true
+    # MySQL连接驱动类
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  redis:
+    # Redis数据库索引(默认为0)
+    database: 0
+    # Redis服务器地址
+    host: localhost
+    # Redis服务器连接端口
+    port: 6379
+    # Redis服务器连接密码(默认为空)
+    password:
+    pool:
+      # 连接池最大连接数(使用负值表示没有限制)
+      max-active: 8
+      # 连接池最大阻塞等待时间(使用负值表示没有限制)
+      max-wait: -1
+      # 连接池的最大的空闲连接
+      max-idle: 8
+      # 连接池的最小的空闲连接
+      min-idle: 0
+    # 连接超时时间(毫秒)
+    timeout: 0
+  data:
+    mongodb:
+      # MongoDB数据库
+      database:
+      # MongoDB服务器主机
+      host:
+      # MongoDb服务器连接密码
+      password:
+      # MongoDB服务器连接用户名
+      username:
+      #
+      field-naming-strategy: org.springframework.data.mapping.model.CamelCaseAbbreviatingFieldNamingStrategy
+      #
+      grid-fs-database:
+      #
+      repositories:
+        enabled: true
+      uri:

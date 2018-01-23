@@ -1,0 +1,19 @@
+name:
+  ecshop
+server:
+    port: 8080
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url:
+    username:
+    password:
+  jpa:
+  redis:
+  data:
+    mongodb:
+      uri:
+  #mail:
+
+
+
