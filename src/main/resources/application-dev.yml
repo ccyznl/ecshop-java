@@ -42,18 +42,18 @@ spring:
   data:
     mongodb:
       # MongoDB数据库
-      database:
+      #database:
       # MongoDB服务器主机
-      host:
+      #host:
       # MongoDb服务器连接密码
-      password:
+      #password:
       # MongoDB服务器连接用户名
-      username:
+      #username:
       #
-      field-naming-strategy: org.springframework.data.mapping.model.CamelCaseAbbreviatingFieldNamingStrategy
+      #field-naming-strategy: org.springframework.data.mapping.model.CamelCaseAbbreviatingFieldNamingStrategy
       #
-      grid-fs-database:
+      #grid-fs-database:
       #
-      repositories:
-        enabled: true
-      uri:
+      #repositories:
+        #enabled: true
+      uri: mongodb://localhost:27017/db_ecshop

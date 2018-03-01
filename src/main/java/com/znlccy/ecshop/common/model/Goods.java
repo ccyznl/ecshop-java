@@ -1,11 +1,9 @@
 package com.znlccy.ecshop.common.model;
 
 import org.hibernate.annotations.GeneratorType;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
@@ -21,24 +19,32 @@ import java.sql.Timestamp;
 public class Goods {
 
     /*声明商品Id*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "goodsId")
     private Long goodsId;
 
     /*声明商品名称*/
+    @Column(name = "goodName")
     private String goodsName;
 
     /*声明商品单价*/
+    @Column(name = "goodsPrice")
     private BigDecimal goodsPrice;
 
     /*声明商品数量*/
+    @Column(name = "goodsNumber")
     private Integer goodsNumber;
 
     /*声明商品生产日期*/
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp produceDate;
 
     /*声明商品生产地址*/
     private String produceAddress;
 
     /*声明商品有效日期*/
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Timestamp validateDate;
 
     /*声明商品总价*/

@@ -1,7 +1,9 @@
 package com.znlccy.ecshop.common.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.List;
@@ -18,15 +20,25 @@ import java.util.List;
 public class Order {
 
     /*声明订单主键*/
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "orderId")
     private Long orderId;
 
     /*声明创建订单时间*/
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @Column(name = "generateOrderTime")
     private Timestamp generateOrderTime;
 
     /*声明订单商品*/
+    @ManyToMany(cascade = {}, fetch = FetchType.EAGER)
+    @JoinTable(name = "order_goods",joinColumns = {@JoinColumn(name = "orderId")},inverseJoinColumns = {@JoinColumn(name = "goodsId")})
     private List<Goods> goods;
 
     /*声明订单用户*/
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    @JsonBackReference
     private User user;
 
     /*声明订单编号*/
